@@ -1,0 +1,821 @@
+{
+	"info": {
+		"_postman_id": "89a3f45d-e948-4a0c-93a7-c2b31276a150",
+		"name": "Ntuaflix",
+		"description": "This is the collection of all endpoints of ntuaflix_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32842371"
+	},
+	"item": [
+		{
+			"name": "Search for titleid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9876/ntuaflix_api/title/:titleid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"ntuaflix_api",
+						"title",
+						":titleid"
+					],
+					"variable": [
+						{
+							"key": "titleid",
+							"value": "valid_title_id"
+						}
+					]
+				},
+				"description": "Fetches information about media from titleid"
+			},
+			"response": [
+				{
+					"name": "Search for titleid",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9876/ntuaflix_api/title/:titleid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"ntuaflix_api",
+								"title",
+								":titleid"
+							],
+							"variable": [
+								{
+									"key": "titleid",
+									"value": "tt0015414"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Search for Title Part",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"titlepart\" : \"title_part_to_search\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9876/ntuaflix_api/searchtitle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"ntuaflix_api",
+						"searchtitle"
+					]
+				},
+				"description": "Searches for media the title of which includes the value of the body parameter \"titlepart\".Gathers information about them and sends it back"
+			},
+			"response": [
+				{
+					"name": "Search for Title Part",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"titlepart\" : \"he\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9876/ntuaflix_api/searchtitle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"ntuaflix_api",
+								"searchtitle"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Search by genre",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"qgenre\" : \"genre_to_search\",\r\n    \"minrating\" : \"minimum_rating\",\r\n    \"yrFROM\" : \"filter_year_from\", (not required)\r\n    \"yrTO\" : \"filter_year_to\" (not required)\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9876/ntuaflix_api/bygenre",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"ntuaflix_api",
+						"bygenre"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search by genre",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"qgenre\" : \"Drama\",\r\n    \"minrating\" : 8.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9876/ntuaflix_api/bygenre",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"ntuaflix_api",
+								"bygenre"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Search by name",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"namepart\" : \"name of worker\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9876/ntuaflix_api/searchname",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"ntuaflix_api",
+						"searchname"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search for name",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"namepart\" : \"aud\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9876/ntuaflix_api/searchname",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"ntuaflix_api",
+								"searchname"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Search for nameid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9876/ntuaflix_api/name/:nameid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"ntuaflix_api",
+						"name",
+						":nameid"
+					],
+					"variable": [
+						{
+							"key": "nameid",
+							"value": "name_id_to_search_for"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search for nameid",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9876/ntuaflix_api/name/:nameid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"ntuaflix_api",
+								"name",
+								":nameid"
+							],
+							"variable": [
+								{
+									"key": "nameid",
+									"value": "nm0000030"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Reset all database data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9876/ntuaflix_api/admin/resetall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"ntuaflix_api",
+						"admin",
+						"resetall"
+					]
+				},
+				"description": "Deletes data from all of the databases's tables"
+			},
+			"response": [
+				{
+					"name": "Reset all database data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9876/ntuaflix_api/admin/resetall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"ntuaflix_api",
+								"admin",
+								"resetall"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Upload Data to Database from File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"filename\" : \"name of file to upload data from\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9876/ntuaflix_api/admin/upload/:name_of_table/:which_drive",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"ntuaflix_api",
+						"admin",
+						"upload",
+						":name_of_table",
+						":which_drive"
+					],
+					"variable": [
+						{
+							"key": "name_of_table",
+							"value": "name of table to add data to"
+						},
+						{
+							"key": "which_drive",
+							"value": "Which drive XAMPP is installed so query can search for existing file properly"
+						}
+					]
+				},
+				"description": "Takes the parameter which_drive so it can properly search for file to upload fata from.The file must already exists in XAMPP database directory\n\nAlso takes a parameter to specify which table to upload data to.This is very useful because instead of having several endpoints that do the same operation,all 7 endpoints are condensed to one\n\nFinally,the final parameter is passed in the body and specifies the name of the file"
+			},
+			"response": [
+				{
+					"name": "Upload to titlebasics",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filename\" : \"truncated_title.basics.tsv\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9876/ntuaflix_api/admin/upload/:name_of_table/:which_drive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"ntuaflix_api",
+								"admin",
+								"upload",
+								":name_of_table",
+								":which_drive"
+							],
+							"variable": [
+								{
+									"key": "name_of_table",
+									"value": "titlebasics"
+								},
+								{
+									"key": "which_drive",
+									"value": "d"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Register new user to database",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"new user name\",\r\n    \"password\" : \"new user password\",\r\n    \"premium_user\" : 0 or 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9876/ntuaflix_api/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"ntuaflix_api",
+						"signup"
+					]
+				},
+				"description": "Takes from body parameters:\r\n\r\nusername,for the user's username\r\n\r\npassword,for the user's password\r\n\r\npremium_user,a boolean which is 1 if the user will have premium access or 0 if they won't"
+			},
+			"response": [
+				{
+					"name": "Upload new user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"Rhett\",\r\n    \"password\" : \"12345\",\r\n    \"premium_user\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9876/ntuaflix_api/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"ntuaflix_api",
+								"signup"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Authorize credentials of user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"user's name\",\r\n    \"password\" : \"user's password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9876/ntuaflix_api/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"ntuaflix_api",
+						"signin"
+					]
+				},
+				"description": "Returns 0 if user is authorized but doesn't have premium access,1 if user is authorized and has premium access and nothing if user fails to authorize their credentials"
+			},
+			"response": [
+				{
+					"name": "Authorize credentials of user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"Rhett\",\r\n    \"password\" : \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9876/ntuaflix_api/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"ntuaflix_api",
+								"signin"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Fetch user's info from username",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9876/ntuaflix_api/admin/users/:username",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"ntuaflix_api",
+						"admin",
+						"users",
+						":username"
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": "user's name"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Fetch user's info from username",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9876/ntuaflix_api/admin/users/:username",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"ntuaflix_api",
+								"admin",
+								"users",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "Rhett"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Use case 1 Query: Find N best rated media of genre",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"qgenre\" : \"genre to search for\",\r\n    \"amount\" : \"amount to return\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9876/ntuaflix_api/bestofgenre",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"ntuaflix_api",
+						"bestofgenre"
+					]
+				},
+				"description": "Accepts parameters from body,the genre to search for and N amount to return"
+			},
+			"response": [
+				{
+					"name": "Fetch top 5 comedies",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"qgenre\" : \"comedy\",\r\n    \"amount\" : \"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9876/ntuaflix_api/bestofgenre",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"ntuaflix_api",
+								"bestofgenre"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Use Case 2 Query : Add or Remove media from Watchlist or Already Watched",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"user name\",\r\n    \"titleid\" : \"titleid of media\",\r\n    \"list_to_manipulate\" : \"watchlist\" or \"already watched\",\r\n    \"add_or_remove\" : \"add\" or \"remove\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9876/ntuaflix_api/editlist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"ntuaflix_api",
+						"editlist"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Use Case 2 Query : Add or Remove media from Watchlist or Already Watched",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"Rhett\",\r\n    \"titleid\" : \"tt0091275\",\r\n    \"list_to_manipulate\" : \"watchlist\",\r\n    \"add_or_remove\" : \"add\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9876/ntuaflix_api/editlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"ntuaflix_api",
+								"editlist"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Part of Use Case 2, fetch lists of username",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9876/ntuaflix_api/fetchlists/:username",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"ntuaflix_api",
+						"fetchlists",
+						":username"
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": "user's name"
+						}
+					]
+				},
+				"description": "Fetches all lists of a user from their username"
+			},
+			"response": [
+				{
+					"name": "Part of Use Case 2, fetch lists of username",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9876/ntuaflix_api/fetchlists/:username",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"ntuaflix_api",
+								"fetchlists",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "Rhett"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

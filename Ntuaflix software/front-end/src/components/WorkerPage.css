@@ -1,0 +1,68 @@
+/* WorkerPage.css */
+
+/* Styling for the main content container */
+.worker-page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensure padding and border are included in width calculation */
+    overflow-y: auto;
+}
+
+/* Styling for the main heading */
+.worker-page-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    pointer-events: none; /* Make the h1 not clickable */
+}
+
+/* Styling for the custom scrollbar */
+.worker-page-container::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+/* Track (background) for the scrollbar */
+.worker-page-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+}
+
+/* Handle (thumb) for the scrollbar */
+.worker-page-container::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 4px; /* Border radius of the scrollbar thumb */
+}
+
+/* Handle on hover */
+.worker-page-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb on hover */
+}
+
+/* Styling for the loading and error messages */
+.loading-message,
+.error-message {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.error-message {
+    color: red;
+}
+
+/* Styling for the worker details */
+.worker-details {
+    margin-top: 20px;
+}
+
+/* Styling for the worker title */
+.worker-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Styling for worker info items */
+.worker-info-item {
+    margin-bottom: 10px;
+}

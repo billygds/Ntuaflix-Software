@@ -1,0 +1,64 @@
+/* Homepage.css */
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure the homepage is vertically centered */
+}
+
+/* Ensure the homepage takes up the full height of the viewport */
+.homepage {
+  min-height: calc(100vh - 4rem); /* Subtracting the height of the layout menu bar */
+  padding-top: 10rem; /* Adding padding to compensate for the layout menu bar */
+  width: 80%; /* Adjust the width as needed */
+  max-width: 1200px; /* Set a maximum width for larger screens */
+  margin: 0 auto; /* Center the homepage horizontally */
+}
+
+.homepage h1 {
+  font-size: 95px;
+  color: #333;
+  text-align: center; /* Align the text to the center */
+  margin-top: 0; /* Remove default margin to ensure alignment */
+}
+.homepage p {
+  font-size: 18px;
+  color: #666;
+}
+
+.homepage h2 {
+  font-size: 24px;
+  color: #333;
+  margin-top: 30px;
+}
+
+.homepage ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.homepage li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.homepage li:hover {
+  background-color: #e9e9e9;
+}
+
+/* Error Message Styles */
+.error-message {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.homepage h1 {
+  cursor: default; /* Set default cursor style */
+}

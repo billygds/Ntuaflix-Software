@@ -1,0 +1,143 @@
+/* Watchlist.css */
+
+/* Styling for the watchlist container */
+.watchlist-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Remove default list styles */
+.media-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Add space between media items */
+.media-item {
+    margin-bottom: 20px;
+    position: relative; /* Make the media item position relative */
+}
+
+/* Style for the custom scrollbar */
+.watchlist-container::-webkit-scrollbar {
+    width: 10px;
+    position: absolute;
+    right: 0;
+}
+
+/* Track (background) for the scrollbar */
+.watchlist-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle (thumb) for the scrollbar */
+.watchlist-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+/* Styling for the media details container */
+.media-details {
+    padding: 10px 10px;
+    background-color: #ffc800;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the media info containers */
+.media-info-container {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+/* Styling for the media info labels */
+.media-info-label {
+    width: 120px;
+    font-weight: bold;
+}
+
+/* Styling for the media info values */
+.media-info-value {
+    flex: 1;
+}
+
+/* Styling for the media link */
+.media-link {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f5c518;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    z-index: 2; /* Ensure the media link is below the extra buttons */
+    position: relative; /* Ensure proper positioning context */
+}
+
+/* Hover effect for the media link */
+.media-link:hover {
+    background-color: #d0a010;
+}
+
+/* Styling for the options container */
+.options-container {
+    position: absolute;
+    top: 100%; /* Position the options container below the button */
+    left: -100%; /* Move the options container to the left */
+    background-color: #f5c518; /* Background color */
+    border-radius: 5px;
+    padding: 5px 0; /* Padding for options container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow */
+    display: flex;
+    flex-direction: column; /* Arrange options vertically */
+}
+
+/* Styling for each option */
+.option {
+    background-color: #f5c518; /* Button background color */
+    color: #000; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px; /* Adjust button padding */
+    font-size: 16px; /* Adjust button font size */
+    text-align: center; /* Center button text */
+    transition: background-color 0.3s; /* Transition effect */
+}
+
+/* Hover effect for options */
+.option:hover {
+    background-color: #d0a010; /* Darker color on hover */
+}
+
+/* Styling for the extra buttons container */
+.extra-buttons {
+    position: absolute; /* Position the extra buttons absolutely */
+    top: 15%; /* Align the extra buttons vertically to the middle */
+    transform: translateY(-50%); /* Adjust position to center vertically */
+    right: 15px; /* Align the extra buttons to the right */
+    z-index: 3; /* Ensure the extra buttons are above the media link */
+}
+
+/* Styling for each button */
+.extra-button {
+    background-color: rgb(223, 180, 28); /* Ntuaflix's primary color */
+    color: #000; /* Black text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px; /* Adjust the font size to increase button size */
+    padding: 10px 20px; /* Add padding to increase button size */
+}
+
+/* Hover effect for buttons */
+.extra-button:hover {
+    background-color: #d0a010; /* Darker color on hover */
+}

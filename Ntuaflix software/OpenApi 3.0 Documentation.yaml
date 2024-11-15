@@ -1,0 +1,312 @@
+openapi: 3.0.3
+info:
+  title: Ntuaflix
+  description: This is the collection of all endpoints of ntuaflix_api
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: http://localhost:9876
+paths:
+  /ntuaflix_api/title/{titleid}:
+    get:
+      summary: Search for titleid
+      description: Fetches information about media from titleid
+      operationId: searchForTitleid
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: titleid
+        in: path
+        required: true
+        schema:
+          type: string
+          example: valid_title_id
+  /ntuaflix_api/searchtitle:
+    post:
+      summary: Search for Title Part
+      description: >-
+        Searches for media the title of which includes the value of the body
+        parameter "titlepart".Gathers information about them and sends it back
+      operationId: searchForTitlePart
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                titlepart:
+                  type: string
+                  example: he
+            examples:
+              Search for Title Part:
+                value:
+                  titlepart: he
+      responses:
+        '200':
+          description: ''
+  /ntuaflix_api/bygenre:
+    post:
+      summary: Search by genre
+      description: Search by genre
+      operationId: searchByGenre
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                minrating:
+                  type: number
+                  example: 8.5
+                qgenre:
+                  type: string
+                  example: Drama
+            examples:
+              Search by genre:
+                value:
+                  minrating: 8.5
+                  qgenre: Drama
+      responses:
+        '200':
+          description: ''
+  /ntuaflix_api/searchname:
+    post:
+      summary: Search by name
+      description: Search by name
+      operationId: searchByName
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                namepart:
+                  type: string
+                  example: aud
+            examples:
+              Search by name:
+                value:
+                  namepart: aud
+      responses:
+        '200':
+          description: ''
+  /ntuaflix_api/name/{nameid}:
+    get:
+      summary: Search for nameid
+      description: Search for nameid
+      operationId: searchForNameid
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: nameid
+        in: path
+        required: true
+        schema:
+          type: string
+          example: name_id_to_search_for
+  /ntuaflix_api/admin/resetall:
+    post:
+      summary: Reset all database data
+      description: Deletes data from all of the databases's tables
+      operationId: resetAllDatabaseData
+      responses:
+        '200':
+          description: ''
+  /ntuaflix_api/admin/upload/{name_of_table}/{which_drive}:
+    post:
+      summary: Upload Data to Database from File
+      description: >-
+        Takes the parameter which_drive so it can properly search for file to
+        upload fata from.The file must already exists in XAMPP database
+        directory
+
+
+        Also takes a parameter to specify which table to upload data to.This is
+        very useful because instead of having several endpoints that do the same
+        operation,all 7 endpoints are condensed to one
+
+
+        Finally,the final parameter is passed in the body and specifies the name
+        of the file
+      operationId: uploadDataToDatabaseFromFile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filename:
+                  type: string
+                  example: truncated_title.basics.tsv
+            examples:
+              Upload Data to Database from File:
+                value:
+                  filename: truncated_title.basics.tsv
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: name_of_table
+        in: path
+        required: true
+        schema:
+          type: string
+          example: name of table to add data to
+      - name: which_drive
+        in: path
+        required: true
+        schema:
+          type: string
+          example: >-
+            Which drive XAMPP is installed so query can search for existing file
+            properly
+  /ntuaflix_api/signup:
+    post:
+      summary: Register new user to database
+      description: "Takes from body parameters:\r\n\r\nusername,for the user's username\r\n\r\npassword,for the user's password\r\n\r\npremium_user,a boolean which is 1 if the user will have premium access or 0 if they won't"
+      operationId: registerNewUserToDatabase
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: '12345'
+                premium_user:
+                  type: number
+                  example: 1
+                username:
+                  type: string
+                  example: Rhett
+            examples:
+              Register new user to database:
+                value:
+                  password: '12345'
+                  premium_user: 1
+                  username: Rhett
+      responses:
+        '200':
+          description: ''
+  /ntuaflix_api/signin:
+    post:
+      summary: Authorize credentials of user
+      description: >-
+        Returns 0 if user is authorized but doesn't have premium access,1 if
+        user is authorized and has premium access and nothing if user fails to
+        authorize their credentials
+      operationId: authorizeCredentialsOfUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: '12345'
+                username:
+                  type: string
+                  example: Rhett
+            examples:
+              Authorize credentials of user:
+                value:
+                  password: '12345'
+                  username: Rhett
+      responses:
+        '200':
+          description: ''
+  /ntuaflix_api/admin/users/{username}:
+    get:
+      summary: Fetch user's info from username
+      description: Fetch user's info from username
+      operationId: fetchUserSInfoFromUsername
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+          example: user's name
+  /ntuaflix_api/bestofgenre:
+    post:
+      summary: 'Use case 1 Query: Find N best rated media of genre'
+      description: >-
+        Accepts parameters from body,the genre to search for and N amount to
+        return
+      operationId: useCase1QueryFindNBestRatedMediaOfGenre
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amount:
+                  type: string
+                  example: '5'
+                qgenre:
+                  type: string
+                  example: comedy
+            examples:
+              'Use case 1 Query: Find N best rated media of genre':
+                value:
+                  amount: '5'
+                  qgenre: comedy
+      responses:
+        '200':
+          description: ''
+  /ntuaflix_api/editlist:
+    post:
+      summary: 'Use Case 2 Query : Add or Remove media from Watchlist or Already Watched'
+      description: 'Use Case 2 Query : Add or Remove media from Watchlist or Already Watched'
+      operationId: useCase2QueryAddOrRemoveMediaFromWatchlistOrAlreadyWatched
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                add_or_remove:
+                  type: string
+                  example: add
+                list_to_manipulate:
+                  type: string
+                  example: watchlist
+                titleid:
+                  type: string
+                  example: tt0091275
+                username:
+                  type: string
+                  example: Rhett
+            examples:
+              'Use Case 2 Query : Add or Remove media from Watchlist or Already Watched':
+                value:
+                  add_or_remove: add
+                  list_to_manipulate: watchlist
+                  titleid: tt0091275
+                  username: Rhett
+      responses:
+        '200':
+          description: ''
+  /ntuaflix_api/fetchlists/{username}:
+    get:
+      summary: Part of Use Case 2, fetch lists of username
+      description: Fetches all lists of a user from their username
+      operationId: partOfUseCase2FetchListsOfUsername
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+          example: user's name
+tags: []

@@ -1,0 +1,104 @@
+#DROP SCHEMA IF EXISTS ntuaflix;
+#CREATE SCHEMA ntuaflix;
+
+#DELETE FROM crew; DELETE FROM episodes; DELETE FROM principals; DELETE FROM ratings; DELETE FROM titlesaka; DELETE FROM users; DELETE FROM workers; DELETE FROM media;
+
+USE ntuaflix;
+
+
+-- MAIN TABLES
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS Media (
+  titleID CHAR(9) NOT NULL,
+  TitleType VARCHAR(45) NOT NULL,
+  TitleName VARCHAR(45) NOT NULL,
+  OriginalTitleName VARCHAR(45) NOT NULL,
+  IsAdult BIT NOT NULL,
+  StartYear INT(4) UNSIGNED,
+  EndYear INT(4) UNSIGNED,
+  RunTimeMinutes INT UNSIGNED,
+  Genre VARCHAR(255),
+  titlePoster VARCHAR(255),
+  PRIMARY KEY (titleID)
+) ENGINE=InnoDB;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS users (
+  username VARCHAR(45) NOT NULL,
+  Password_ VARCHAR(45) NOT NULL,
+  RegisterDate DATE ,
+  License CHAR(9) ,
+  Watchlist VARCHAR(255),
+  AlreadyWatched VARCHAR(255),
+  PRIMARY KEY (username)
+) ENGINE=InnoDB;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS workers (
+  nameID CHAR(10) NOT NULL,
+  PrimaryName VARCHAR(32) NOT NULL,
+  BirthYear INT(4) UNSIGNED,
+  DeathYear INT(4) UNSIGNED,
+  professions VARCHAR(128) ,
+  TitlesWorkedOn VARCHAR(255) ,
+  namePoster VARCHAR(255),
+  PRIMARY KEY (nameID)
+) ENGINE=InnoDB;
+
+-- TABLES WITH DEPENDENCIES
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS Principals (
+  titleID CHAR(9) NOT NULL,
+  Ordering INT unsigned ,
+  nameID CHAR(10) NOT NULL,
+  category VARCHAR(50) NOT NULL,
+  Job VARCHAR(32) NOT NULL,
+  Characters VARCHAR(255) ,
+  url VARCHAR(255),
+  FOREIGN KEY (titleID) REFERENCES Media(titleID),
+  FOREIGN KEY (nameID) REFERENCES Workers(nameID)
+) ENGINE=InnoDB;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS Episodes (
+  Ep_ID CHAR(9) NOT NULL PRIMARY KEY ,
+  titleID CHAR(9) NOT NULL,
+  Season INT UNSIGNED ,
+  Episode INT UNSIGNED #,
+  #FOREIGN KEY (titleID) REFERENCES Media(titleID)
+) ENGINE=InnoDB;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS Ratings (
+  titleID CHAR(9) NOT NULL,
+  Rating varchar(3) ,
+  votes INT UNSIGNED ,
+  FOREIGN KEY (titleID) REFERENCES Media(titleID)
+) ENGINE=InnoDB;
+
+
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS Crew(
+  titleID CHAR(9) NOT NULL,
+  directors VARCHAR(255) ,
+  writers VARCHAR(255) ,
+  FOREIGN KEY (titleID) REFERENCES Media(titleID)
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS TitlesAka(
+  titleID CHAR(9) NOT NULL,
+  variations INT UNSIGNED NOT NULL,
+  title VARCHAR(64) NOT NULL,
+  region VARCHAR(6) ,
+  language_ VARCHAR(10) ,
+  email VARCHAR(45) NOT NULL,
+  attributes VARCHAR(16) NOT NULL,
+  IsOriginalTitle BIT NOT NULL,
+  CONSTRAINT fk_titleaka FOREIGN KEY (titleID) REFERENCES Media(titleID) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+SHOW TABLES;
+SHOW DATABASES;

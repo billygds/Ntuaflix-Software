@@ -1,0 +1,88 @@
+/* WorkerSearch.css */
+
+/* Styling for the worker search container */
+.worker-search-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .worker-search-container {
+    max-height: 80vh; /* Set maximum height to 80% of the viewport height */
+    overflow-y: auto; /* Add vertical scrollbar if content overflows */
+  }
+  
+  .worker-list {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .worker-item {
+    margin-bottom: 20px; /* Add space between worker items */
+  }
+  
+  .worker-search-container::-webkit-scrollbar {
+    width: 10px; /* Set the width of the scrollbar */
+  }
+  
+  /* Track (background) for the scrollbar */
+  .worker-search-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Set the background color of the track */
+  }
+  
+  /* Handle (thumb) for the scrollbar */
+  .worker-search-container::-webkit-scrollbar-thumb {
+    background: #888; /* Set the color of the handle */
+    border-radius: 5px; /* Set border radius */
+  }
+  
+  /* Set the position of the scrollbar to the right */
+  .worker-search-container::-webkit-scrollbar {
+    position: absolute;
+    right: 0;
+  }
+  
+  /* Styling for the worker details container */
+  .worker-details {
+    padding: 10px;
+    background-color: #ffc800;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for the worker info containers */
+  .worker-info-container {
+    display: flex;
+    margin-bottom: 5px;
+  }
+  
+  /* Styling for the worker info labels */
+  .worker-info-label {
+    width: 120px;
+    font-weight: bold;
+  }
+  
+  /* Styling for the worker info values */
+  .worker-info-value {
+    flex: 1;
+  }
+
+  /* WorkerSearch.css */
+
+  .worker-link {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f5c518; /* Ntuaflix's primary color */
+    color: #000; /* Black text color */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .worker-link:hover {
+    background-color: #d0a010; /* Darker color on hover */
+  }

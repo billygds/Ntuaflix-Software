@@ -1,0 +1,45 @@
+/* SignInForm.css */
+
+.SignInForm {
+  max-width: 350px; /* Adjusted max-width */
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ff5733; /* Hot orange background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow */
+  color: #fff; /* White text color */
+  text-align: center; /* Center align text */
+}
+
+.SignInForm h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.SignInForm input[type="text"],
+.SignInForm input[type="password"] {
+  width: calc(100% - 20px); /* Adjusted width */
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.SignInForm button {
+  width: calc(100% - 20px); /* Adjusted width */
+  padding: 12px;
+  background-color: #ff8c00; /* Darker orange background color */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add transition for smoother hover effect */
+}
+
+.SignInForm button:hover {
+  background-color: #ff5733; /* Hot orange color on hover */
+}
+
+.error {
+  color: #ff5733; /* Hot orange color for error messages */
+}

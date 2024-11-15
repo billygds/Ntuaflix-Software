@@ -1,0 +1,169 @@
+/* MediaPage.css */
+
+/* Styling for the main content container */
+.media-page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  max-height: 80vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Ensure padding and border are included in width calculation */
+  overflow-y: auto;
+  position: relative; /* Add position relative */
+}
+
+/* Styling for the main heading */
+.media-page-container h1 {
+  font-size: 24px;
+  font-weight: bold;
+  pointer-events: none; /* Make the h1 not clickable */
+}
+
+/* Styling for the custom scrollbar */
+.media-page-container::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+/* Track (background) for the scrollbar */
+.media-page-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the scrollbar track */
+}
+
+/* Handle (thumb) for the scrollbar */
+.media-page-container::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Border radius of the scrollbar thumb */
+}
+
+/* Handle on hover */
+.media-page-container::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar thumb on hover */
+}
+
+/* Styling for the loading and error messages */
+.loading-message,
+.error-message {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.error-message {
+  color: red;
+}
+
+/* Styling for the media details */
+.media-details {
+  margin-top: 20px;
+}
+
+/* Styling for the media title */
+.media-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Styling for the main heading */
+.main-heading {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Styling for media info items */
+.media-info-item {
+  margin-bottom: 10px;
+}
+
+/* Styling for the akas info */
+.akas-info {
+  margin-top: 20px;
+}
+
+/* Styling for the person info */
+.person-info {
+  margin-top: 20px;
+}
+
+/* Styling for the person info list */
+.person-info-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Styling for each person info item */
+.person-info-item {
+  margin-bottom: 10px;
+}
+
+/* Styling for person name links */
+.person-name-link {
+  color: #007bff; /* Blue color for links */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.person-name-link:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Styling for the options container */
+.options-container {
+    position: absolute;
+    top: 100%; /* Position the options container below the button */
+    left: -100%; /* Move the options container to the left */
+    background-color: #f5c518; /* Background color */
+    border-radius: 5px;
+    padding: 5px 0; /* Padding for options container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow */
+    display: flex;
+    flex-direction: column; /* Arrange options vertically */
+}
+
+/* Styling for each option */
+.option {
+    background-color: #f5c518; /* Button background color */
+    color: #000; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px; /* Adjust button padding */
+    font-size: 16px; /* Adjust button font size */
+    text-align: center; /* Center button text */
+    transition: background-color 0.3s; /* Transition effect */
+}
+
+/* Hover effect for options */
+.option:hover {
+    background-color: #d0a010; /* Darker color on hover */
+}
+
+/* Styling for the extra buttons container */
+.extra-buttons {
+    position: absolute; /* Position the extra buttons absolutely */
+    top: 15%; /* Align the extra buttons vertically to the middle */
+    transform: translateY(-50%); /* Adjust position to center vertically */
+    right: 15px; /* Align the extra buttons to the right */
+    z-index: 3; /* Ensure the extra buttons are above the media link */
+}
+
+/* Styling for each button */
+.extra-button {
+    background-color: rgb(223, 180, 28); /* Ntuaflix's primary color */
+    color: #000; /* Black text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px; /* Adjust the font size to increase button size */
+    padding: 10px 20px; /* Add padding to increase button size */
+}
+
+/* Hover effect for buttons */
+.extra-button:hover {
+    background-color: #d0a010; /* Darker color on hover */
+}
+/* Hover effect for options */
+.option:hover {
+    background-color: #d0a010; /* Darker color on hover */
+}
